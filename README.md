@@ -7,4 +7,4 @@ Write a piece of malware/rookit based on w0rm.cpp - http://harmony.haxors.com
 
 I'll leave the source to w0rm.cpp since I forgot which repo i stole it from and their website is down.
 
-It is probably going to take a few months before I'm able to get a decent grasp on malware development so this repository is a reminder to myself as well.
+It is probably going to take a few months before I'm able to get a decent grasp on development in c++ so this repository is a reminder to myself as well.
