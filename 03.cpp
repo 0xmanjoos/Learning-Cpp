@@ -1,26 +1,34 @@
 #include <iostream>
-// xor swap algorithm
+#include <time.h>
+#ifdef _WIN32
+#include <Windows.h>
+#define LENGTH 1000
+#else
+#include <unistd.h>
+#define LENGTH 1
+#endif
 
-// apparently the xor swap algorithm is extremely old, depricated, and useless
-// still cool to know tho :/
-
-int xorswap(int x, int y) {
-    x=x^y;
-    std::cout<<x<<std::endl;
-
-    y=y^x;
-    std::cout<<y<<std::endl;
-
-    x=x^y;
-
-    std::cout<<"x: "<<x<<"\ny: "<<y;
+// dynamic memory allocation in c++
+class Box {
+   public:
+      Box() { // constructor
+         std::cout << "Constructor called!\n";
+      }
+      ~Box() { // destructor
+         std::cout << "Destructor called!\n";
+      }
+};
+void dynamic(){
+    double* value = NULL; // initialize pointer with value of null
+    value = new double; // allocate memory for this variable with c++ 'new' function
+    *value = 2919.122; // store value at allocated address
+    std::cout<<"Value of value: "<< *value<<std::endl; // output
+    delete value; // 'free' this heap segment, or in c++ 'delete'
 }
-
-int main() {
-
-    int input, input2;
-    std::cout<<"[x]Enter a number: ";std::cin>>input;
-    std::cout<<"[y]Enter another number: ";std::cin>>input2;
-    xorswap(input, input2);
+int main(){
+    dynamic();
+    sleep(LENGTH);
+    Box* myBoxArray = new Box[1];
+    delete [] myBoxArray; // Delete array
     return 0;
 }
