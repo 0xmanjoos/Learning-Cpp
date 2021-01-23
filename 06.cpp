@@ -21,6 +21,7 @@ double factorial(double in) { return (in==1) ? 1 : factorial(in-1) * in; }
 int fibb(double in1){return (in1 <= 1) ? in1 : fibb(in1-1) + fibb(in1-2); }
 
 // driver code
+// remember not to make the input too large since the factorial function will cause a seg fault
 int main(){
     double uwu;
     std::cout<<"Enter a number: "; std::cin>>uwu;
