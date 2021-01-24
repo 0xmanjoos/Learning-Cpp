@@ -23,6 +23,7 @@ IT IS PROBABLY SOMETHING TO DO WITH htons(); FUNCTION OR SOMETHING IDK HAVE FUN 
 -------------------------------------------------------------------------------------*/
 // this should be where we get into the networking side of things
 // this one will demonstrate a socket server in *NIX systems, next will be with winsock2
+// most of this code is c functions but hey still c++
 void handle(const char* errorMessage) {
     perror(errorMessage);
     exit(1);
