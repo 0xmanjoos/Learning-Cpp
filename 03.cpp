@@ -1,11 +1,15 @@
+// include essential headers
 #include <iostream>
 #include <time.h>
+// if win32, include windowz stufzz
 #ifdef _WIN32
 #include <Windows.h>
-#define LENGTH 1000
+// windows Sleep() function takes milliseconds so i define it here
+#define LEN 1000
+// else include linux headers
 #else
 #include <unistd.h>
-#define LENGTH 1
+#define LEN 1
 #endif
 
 // dynamic memory allocation in c++
