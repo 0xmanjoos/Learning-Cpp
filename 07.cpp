@@ -16,15 +16,17 @@
 #define LEN 1
 #define BUFFER 1024
 #endif
-
+/*----------------------------------------------------------------------------------
+NOTE:
+THIS IS A BAD SOCKET SERVER AND IM DUMB, I CANT SEEM TO TROUBLESHOOT THE PROBLEM WITH THE RANDOM SOCKET PORTS
+IT IS PROBABLY SOMETHING TO DO WITH htons(); FUNCTION OR SOMETHING IDK HAVE FUN DEBUGGING WEEEEE ONTO THE NEXT ONE 
+-------------------------------------------------------------------------------------*/
 // this should be where we get into the networking side of things
 // this one will demonstrate a socket server in *NIX systems, next will be with winsock2
-
 void handle(const char* errorMessage) {
     perror(errorMessage);
     exit(1);
 }
-
 int main(int argc, char* argv[]) {
     system("echo socket server has started, do \"netstat -tulpn\" or something of the sort to see port");
     // define the buffer size
@@ -50,7 +52,6 @@ int main(int argc, char* argv[]) {
     listen(lfd, 10);
     // accept connections
     cfd = accept(lfd, (struct sockaddr*) NULL, NULL);
-
     while(1) {
         // clear out message again
         memset(message, 0, BUFFER);
@@ -63,4 +64,3 @@ int main(int argc, char* argv[]) {
     }
     return 0;
 }
-
